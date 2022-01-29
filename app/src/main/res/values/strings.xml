@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Trends Marketplace</string>
+    <string name="loading">Loading…</string>
+    <string name="beranda">Beranda</string>
+    <string name="tokopedia">Tokopedia</string>
+    <string name="shopee">Shopee</string>
+    <string name="bukalapak">Bukalapak</string>
+    <string name="help">Bantuan</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+    <string name="text_dialog_logout">Ingin keluar dari aplikasi?</string>
+</resources>
