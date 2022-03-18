@@ -9,15 +9,14 @@
     <FrameLayout
         android:id="@+id/contentMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/navBottom" />
+        android:layout_height="match_parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navBottom"
-        style="@style/Widget.MaterialComponents.BottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/nav_bottom" />
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/navBottom"-->
+<!--        style="@style/Widget.MaterialComponents.BottomNavigationView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        app:labelVisibilityMode="labeled"-->
+<!--        app:menu="@menu/nav_bottom" />-->
 </RelativeLayout>

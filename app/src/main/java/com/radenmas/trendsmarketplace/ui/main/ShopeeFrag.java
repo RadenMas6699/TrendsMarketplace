@@ -5,6 +5,7 @@ import android.webkit.WebView;
 
 import com.radenmas.trendsmarketplace.R;
 import com.radenmas.trendsmarketplace.base.BaseFragment;
+import com.radenmas.trendsmarketplace.network.Config;
 
 public class ShopeeFrag extends BaseFragment {
     @Override
@@ -15,9 +16,12 @@ public class ShopeeFrag extends BaseFragment {
     @Override
     protected void myCodeHere(View view) {
         WebView webViewShopee = view.findViewById(R.id.webViewShopee);
-        webViewShopee.loadUrl("https://shopee.co.id/Pakaian-Pria-cat.11042849?page=0&sortBy=pop");
-        webViewShopee.getSettings().setLoadsImagesAutomatically(true);
+//        webViewShopee.loadUrl("https://shopee.co.id/Pakaian-Pria-cat.11042849?page=0&sortBy=pop");
+//        webViewShopee.getSettings().setLoadsImagesAutomatically(true);
+//        webViewShopee.getSettings().setJavaScriptEnabled(true);
+//        webViewShopee.getSettings().setDomStorageEnabled(true);
+
+        webViewShopee.loadUrl(Config.URL_SHOPEE);
         webViewShopee.getSettings().setJavaScriptEnabled(true);
-        webViewShopee.getSettings().setDomStorageEnabled(true);
     }
 }

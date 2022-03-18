@@ -1,55 +1,74 @@
 package com.radenmas.trendsmarketplace.ui.main;
 
 import android.app.Dialog;
-import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.button.MaterialButton;
 import com.radenmas.trendsmarketplace.R;
-import com.radenmas.trendsmarketplace.base.BaseFragment;
-import com.radenmas.trendsmarketplace.ui.help.HelpAct;
+import com.radenmas.trendsmarketplace.databinding.FragHomeBinding;
 
-public class HomeFrag extends BaseFragment {
-    private ImageView imgHelp, imgLogout;
-
-    @Override
-    protected int getLayoutResource() {
-        return R.layout.frag_home;
-    }
+public class HomeFrag extends Fragment {
+    private FragHomeBinding b;
 
     @Override
-    protected void myCodeHere(View view) {
-        initView(view);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        b = FragHomeBinding.inflate(inflater,container,false);
+        View v = b.getRoot();
+        getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+
         onClick();
+
+        return v;
     }
 
     private void onClick() {
-        imgHelp.setOnClickListener(view -> {
-            startActivity(new Intent(getContext(), HelpAct.class));
+        b.imgHelp.setOnClickListener(view -> {
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new HelpFrag()).commit();
         });
 
-        imgLogout.setOnClickListener(view -> {
-            Dialog dialog = new Dialog(getContext(), R.style.DialogStyle);
-            dialog.setContentView(R.layout.dialog_logout);
-            dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog);
+        b.imgLogout.setOnClickListener(view -> {
+            dialogLogout();
+        });
 
-            MaterialButton btnYes = dialog.findViewById(R.id.btnYes);
-            MaterialButton btnNo = dialog.findViewById(R.id.btnNo);
+        b.cardRisetData.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Riset Data", Toast.LENGTH_SHORT).show();
+        });
 
-            btnYes.setOnClickListener(view1 -> {
+        b.cardTokopedia.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Tokopedia", Toast.LENGTH_SHORT).show();
+        });
 
-            });
-            btnNo.setOnClickListener(view1 -> {
-                dialog.dismiss();
-            });
+        b.cardShopee.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Shopee", Toast.LENGTH_SHORT).show();
+        });
 
-            dialog.show();
+        b.cardBlibli.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Blibli", Toast.LENGTH_SHORT).show();
         });
     }
 
-    private void initView(View view) {
-        imgHelp = view.findViewById(R.id.imgHelp);
-        imgLogout = view.findViewById(R.id.imgLogout);
+    private void dialogLogout(){
+        Dialog dialog = new Dialog(getContext(), R.style.DialogStyle);
+        dialog.setContentView(R.layout.dialog_logout);
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog);
+
+        MaterialButton btnYes = dialog.findViewById(R.id.btnYes);
+        MaterialButton btnNo = dialog.findViewById(R.id.btnNo);
+
+        btnYes.setOnClickListener(view1 -> {
+            getActivity().finish();
+        });
+        btnNo.setOnClickListener(view1 -> {
+            dialog.dismiss();
+        });
+
+        dialog.show();
     }
 }

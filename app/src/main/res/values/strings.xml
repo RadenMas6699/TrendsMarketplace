@@ -2,11 +2,26 @@
     <string name="app_name">Trends Marketplace</string>
     <string name="loading">Loading…</string>
     <string name="beranda">Beranda</string>
+    <string name="riset_data">Riset Data</string>
     <string name="tokopedia">Tokopedia</string>
     <string name="shopee">Shopee</string>
-    <string name="bukalapak">Bukalapak</string>
+    <string name="blibli">Blibli</string>
     <string name="help">Bantuan</string>
+    <string name="guide">Panduan</string>
+    <string name="help_guide">Petunjuk Penggunaan</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
     <string name="text_dialog_logout">Ingin keluar dari aplikasi?</string>
+    <string name="desc_panduan_1">Aplikasi ini merupakan sebuah aplikasi yang menampilkan data produk trending/terlaris dari berbagai marketplace.</string>
+    <string name="desc_panduan_2">Data diolah menggunakan metode web scrapping, dengan data produk yang bersifat realtime dan up to date dengan data yang ada pada marketplace.</string>
+    <string name="desc_panduan_3">Data produk trending ini berasal dari 3 marketplace terbesar dan dengan pengguna terbanyak yaitu shopee, tokopedia dan blibli.</string>
+    <string name="desc_panduan_4">Produk trending yang ada pada aplikasi ini dapat berguna bagi seluruh pengguna khususnya pelaku usaha, pelanggan, dan masyarakat umum.</string>
+    <string name="desc_panduan_5">Aplikasi bersifat user friendly, dengan tampilan menarik dan mudah digunakan.</string>
+    <string name="desc_panduan_6">Pengguna dapat memilih tampilan produk trending dari berbagai marketplace yang tersedia di halaman beranda.</string>
+    <string name="_1">1.</string>
+    <string name="_2">2.</string>
+    <string name="_3">3.</string>
+    <string name="_4">4.</string>
+    <string name="_5">5.</string>
+    <string name="_6">6.</string>
 </resources>

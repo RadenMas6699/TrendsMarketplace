@@ -5,6 +5,7 @@ import android.os.Handler;
 
 import com.radenmas.trendsmarketplace.R;
 import com.radenmas.trendsmarketplace.base.BaseActivity;
+import com.radenmas.trendsmarketplace.ui.TestAct;
 import com.radenmas.trendsmarketplace.ui.main.MainAct;
 
 public class SplashAct extends BaseActivity {
@@ -18,6 +19,6 @@ public class SplashAct extends BaseActivity {
         new Handler().postDelayed(() -> {
             startActivity(new Intent(getApplicationContext(), MainAct.class));
             finish();
-        }, 1500);
+        }, 2000);
     }
 }

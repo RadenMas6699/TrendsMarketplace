@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
+    android:background="@color/primary_light"
     android:orientation="vertical"
     android:paddingVertical="32dp">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher_round" />
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:src="@drawable/ic_trend_marketplace_transparent" />
 
     <TextView
         android:layout_width="match_parent"
@@ -35,8 +36,9 @@
             android:layout_height="wrap_content"
             android:text="@string/yes"
             android:textAllCaps="false"
-            app:backgroundTint="@color/teal_700"
-            app:cornerRadius="16dp" />
+            android:textColor="@color/primary_text"
+            app:backgroundTint="@color/primary"
+            app:cornerRadius="6dp" />
 
         <View
             android:layout_width="32dp"
@@ -48,8 +50,9 @@
             android:layout_height="wrap_content"
             android:text="@string/no"
             android:textAllCaps="false"
-            app:backgroundTint="@color/teal_700"
-            app:cornerRadius="16dp" />
+            android:textColor="@color/primary_text"
+            app:backgroundTint="@color/primary"
+            app:cornerRadius="6dp" />
     </LinearLayout>
 
 </LinearLayout>
