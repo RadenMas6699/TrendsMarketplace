@@ -68,19 +68,19 @@ public class TestAct extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
 
             try {
-                String url = "https://www.blibli.com/";
+                String url = Config.BLIBLI;
                 Document doc = Jsoup.connect(url).get();
 
-                Elements data = doc.select("div.popular-category__item");
+                Elements data = doc.select("div.trending__content");
                 int size = data.size();
                 for (int i = 0; i < size; i++) {
-                    String imgUrl = data.select("div.popular-category__item-image")
+                    String imgUrl = data.select("trending__item-preview")
                             .select("img")
                             .eq(i)
                             .attr("src");
 
-                    String title = data.select("div.popular-category__item-name")
-                            .select("div")
+                    String title = data.select("span.trending__item-name")
+                            .select("span")
                             .eq(i)
                             .text();
 
@@ -93,9 +93,9 @@ public class TestAct extends AppCompatActivity {
 //                            .eq(i)
 //                            .attr("href");
                     productModels.add(new ProductModel(title, title, imgUrl, title));
-                    Log.d("TITLE", imgUrl);
-                }
 
+                }
+                Log.e("TITLE", String.valueOf(data));
 
             } catch (IOException e) {
                 e.printStackTrace();

@@ -1,7 +1,9 @@
 package com.radenmas.trendsmarketplace.ui.main;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.ImageView;
 
 import com.radenmas.trendsmarketplace.R;
 import com.radenmas.trendsmarketplace.base.BaseFragment;
@@ -13,14 +15,14 @@ public class ShopeeFrag extends BaseFragment {
         return R.layout.frag_shopee;
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void myCodeHere(View view) {
-        WebView webViewShopee = view.findViewById(R.id.webViewShopee);
-//        webViewShopee.loadUrl("https://shopee.co.id/Pakaian-Pria-cat.11042849?page=0&sortBy=pop");
-//        webViewShopee.getSettings().setLoadsImagesAutomatically(true);
-//        webViewShopee.getSettings().setJavaScriptEnabled(true);
-//        webViewShopee.getSettings().setDomStorageEnabled(true);
 
+        ImageView imgBack = view.findViewById(R.id.imgBack);
+        imgBack.setOnClickListener(view1 -> getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new HomeFrag()).commit());
+
+        WebView webViewShopee = view.findViewById(R.id.webViewShopee);
         webViewShopee.loadUrl(Config.URL_SHOPEE);
         webViewShopee.getSettings().setJavaScriptEnabled(true);
     }

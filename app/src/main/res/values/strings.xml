@@ -11,7 +11,7 @@
     <string name="help_guide">Petunjuk Penggunaan</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
-    <string name="text_dialog_logout">Ingin keluar dari aplikasi?</string>
+    <string name="text_dialog_logout">Apakah Anda yakin ingin keluar dari aplikasi ini?</string>
     <string name="desc_panduan_1">Aplikasi ini merupakan sebuah aplikasi yang menampilkan data produk trending/terlaris dari berbagai marketplace.</string>
     <string name="desc_panduan_2">Data diolah menggunakan metode web scrapping, dengan data produk yang bersifat realtime dan up to date dengan data yang ada pada marketplace.</string>
     <string name="desc_panduan_3">Data produk trending ini berasal dari 3 marketplace terbesar dan dengan pengguna terbanyak yaitu shopee, tokopedia dan blibli.</string>
@@ -24,4 +24,5 @@
     <string name="_4">4.</string>
     <string name="_5">5.</string>
     <string name="_6">6.</string>
+    <string name="back">Kembali</string>
 </resources>

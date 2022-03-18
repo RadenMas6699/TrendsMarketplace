@@ -37,20 +37,23 @@ public class HomeFrag extends Fragment {
             dialogLogout();
         });
 
-        b.cardRisetData.setOnClickListener(v -> {
+        b.rlRisetData.setOnClickListener(v -> {
             Toast.makeText(getContext(), "Riset Data", Toast.LENGTH_SHORT).show();
+//            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new HelpFrag()).commit();
+
         });
 
-        b.cardTokopedia.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Tokopedia", Toast.LENGTH_SHORT).show();
+        b.rlTokopedia.setOnClickListener(v -> {
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new TokopediaFrag()).commit();
         });
 
-        b.cardShopee.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Shopee", Toast.LENGTH_SHORT).show();
+        b.rlShopee.setOnClickListener(v -> {
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new ShopeeFrag()).commit();
         });
 
-        b.cardBlibli.setOnClickListener(v -> {
+        b.rlBlibli.setOnClickListener(v -> {
             Toast.makeText(getContext(), "Blibli", Toast.LENGTH_SHORT).show();
+//            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new HelpFrag()).commit();
         });
     }
 

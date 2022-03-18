@@ -14,23 +14,22 @@
         <activity
             android:name=".ui.TestAct"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-        <activity android:name=".ui.main.HelpFrag" />
-        <activity android:name=".ui.main.MainAct" />
-        <activity
-            android:name=".ui.splash.SplashAct"
-            android:exported="true"
-            android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.main.MainAct" />
+        <activity
+            android:name=".ui.splash.SplashAct"
+            android:exported="true"
+            android:theme="@style/Splash">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="false" />

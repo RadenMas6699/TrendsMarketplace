@@ -1,7 +1,9 @@
 package com.radenmas.trendsmarketplace.ui.main;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.ImageView;
 
 import com.radenmas.trendsmarketplace.R;
 import com.radenmas.trendsmarketplace.base.BaseFragment;
@@ -13,15 +15,14 @@ public class TokopediaFrag extends BaseFragment {
         return R.layout.frag_tokopedia;
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void myCodeHere(View view) {
-        WebView webViewTokopedia = view.findViewById(R.id.webViewTokopedia);
-//        webViewTokopedia.loadUrl("https://www.tokopedia.com/p/fashion-pria/jeans-denim-pria/kemeja-denim-pria?ob=5&page=1");
-//        webViewTokopedia.loadUrl("https://tokopedia.link/BliGvAAD9mb");
-//        webViewTokopedia.getSettings().setLoadsImagesAutomatically(true);
-//        webViewTokopedia.getSettings().setJavaScriptEnabled(true);
-//        webViewTokopedia.getSettings().setDomStorageEnabled(true);
 
+        ImageView imgBack = view.findViewById(R.id.imgBack);
+        imgBack.setOnClickListener(view1 -> getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new HomeFrag()).commit());
+
+        WebView webViewTokopedia = view.findViewById(R.id.webViewTokopedia);
         webViewTokopedia.loadUrl(Config.URL_TOKOPEDIA);
         webViewTokopedia.getSettings().setJavaScriptEnabled(true);
     }
