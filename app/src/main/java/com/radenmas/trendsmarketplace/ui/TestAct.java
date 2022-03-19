@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.radenmas.trendsmarketplace.R;
 import com.radenmas.trendsmarketplace.adapter.ProductAdapter;
 import com.radenmas.trendsmarketplace.model.ProductModel;
-import com.radenmas.trendsmarketplace.network.Config;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -48,124 +47,90 @@ public class TestAct extends AppCompatActivity {
     private class Content extends AsyncTask<Void, Void, Void> {
 
         @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-
-        @Override
-        protected void onPostExecute(Void unused) {
-            super.onPostExecute(unused);
-            adapter.notifyDataSetChanged();
-        }
-
-        @Override
-        protected void onCancelled() {
-            super.onCancelled();
-        }
-
-        @Override
         protected Void doInBackground(Void... voids) {
-
+            Document document = null;
             try {
-                String url = Config.BLIBLI;
-                Document doc = Jsoup.connect(url).get();
+                document = Jsoup.connect("https://www.blibli.com/").get();
 
-                Elements data = doc.select("div.trending__content");
-                int size = data.size();
-                for (int i = 0; i < size; i++) {
-                    String imgUrl = data.select("trending__item-preview")
-                            .select("img")
-                            .eq(i)
-                            .attr("src");
+                Elements data = document.getElementsByClass("product-list__item");
 
-                    String title = data.select("span.trending__item-name")
-                            .select("span")
-                            .eq(i)
-                            .text();
+//                String imgUrl = data.select("span.thumbnail");
 
-//                    String desc = data.select("div.css-1ksb19c")
+                Log.d("TEST", String.valueOf(data));
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+
+//            String data = elements.text();
+
+//            Log.d("MSG", data);
+            return null;
+        }
+    }
+
+
+//    private class Content extends AsyncTask<Void, Void, Void> {
+//
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//        }
+//
+//
+//        @Override
+//        protected void onPostExecute(Void unused) {
+//            super.onPostExecute(unused);
+//            adapter.notifyDataSetChanged();
+//        }
+//
+//        @Override
+//        protected void onCancelled() {
+//            super.onCancelled();
+//        }
+//
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//
+//            try {
+//                String url = "https://www.cinemaqatar.com";
+//                Document doc = Jsoup.connect(url).get();
+//
+//                Elements data = doc.select("span.thumbnail");
+//                int size = data.size();
+//                for (int i = 0; i < size; i++) {
+//                    String imgUrl = data.select("span.thumbnail")
+//                            .select("img")
+//                            .eq(i)
+//                            .attr("src");
+//
+//                    String title = data.select("h4.gridminfotitle")
+//                            .select("span")
 //                            .eq(i)
 //                            .text();
 //
-//                    String urll = data.select("div.css-zimbi")
+//                    String desc = data.select("p.gridminfo")
+//                            .eq(i)
+//                            .text();
+//
+//                    String urll = data.select("a.btnmain")
 //                            .select("a")
 //                            .eq(i)
 //                            .attr("href");
-                    productModels.add(new ProductModel(title, title, imgUrl, title));
+//                    productModels.add(new ProductModel(title, desc, imgUrl, urll));
+//                    Log.d("TITLE", imgUrl);
+//                }
+//
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//            return null;
+//        }
+//    }
 
-                }
-                Log.e("TITLE", String.valueOf(data));
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-    }
-
-
-    /*
-    private class Content extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-
-        @Override
-        protected void onPostExecute(Void unused) {
-            super.onPostExecute(unused);
-            adapter.notifyDataSetChanged();
-        }
-
-        @Override
-        protected void onCancelled() {
-            super.onCancelled();
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-
-            try {
-                String url = "https://www.cinemaqatar.com";
-                Document doc = Jsoup.connect(url).get();
-
-                Elements data = doc.select("span.thumbnail");
-                int size = data.size();
-                for (int i = 0; i < size; i++) {
-                    String imgUrl = data.select("span.thumbnail")
-                            .select("img")
-                            .eq(i)
-                            .attr("src");
-
-                    String title = data.select("h4.gridminfotitle")
-                            .select("span")
-                            .eq(i)
-                            .text();
-
-                    String desc = data.select("p.gridminfo")
-                            .eq(i)
-                            .text();
-
-                    String urll = data.select("a.btnmain")
-                            .select("a")
-                            .eq(i)
-                            .attr("href");
-                    productModels.add(new ProductModel(urll, desc, imgUrl, urll));
-                    Log.d("TITLE", imgUrl);
-                }
-
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-    }
-     */
 
 }
