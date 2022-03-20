@@ -19,7 +19,7 @@ public class HomeFrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        b = FragHomeBinding.inflate(inflater,container,false);
+        b = FragHomeBinding.inflate(inflater, container, false);
         View v = b.getRoot();
         getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
@@ -38,8 +38,7 @@ public class HomeFrag extends Fragment {
         });
 
         b.rlRisetData.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Riset Data", Toast.LENGTH_SHORT).show();
-//            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new HelpFrag()).commit();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new RisetDataFrag()).commit();
 
         });
 
@@ -57,7 +56,7 @@ public class HomeFrag extends Fragment {
         });
     }
 
-    private void dialogLogout(){
+    private void dialogLogout() {
         Dialog dialog = new Dialog(getContext(), R.style.DialogStyle);
         dialog.setContentView(R.layout.dialog_logout);
         dialog.getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog);

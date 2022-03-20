@@ -2,7 +2,7 @@
     <string name="app_name">Trends Marketplace</string>
     <string name="loading">Loading…</string>
     <string name="beranda">Beranda</string>
-    <string name="riset_data">Riset Data</string>
+    <string name="data_riset">Data Riset</string>
     <string name="tokopedia">Tokopedia</string>
     <string name="shopee">Shopee</string>
     <string name="blibli">Blibli</string>
@@ -24,5 +24,28 @@
     <string name="_4">4.</string>
     <string name="_5">5.</string>
     <string name="_6">6.</string>
+    <string name="_7">7.</string>
     <string name="back">Kembali</string>
+    <string name="penjelasan_data_riset">Pengertian dan Penjelasan Data Riset</string>
+    <string name="riset_1">\t\t\t\t\tData riset merupakan gabungan dari dua kata yaitu data dan riset , Data merupakan sejumlah informasi yang dapat memberikan gambaran tentang suatu keadaan, atau masalah baik yang berbentuk angka-angka maupun yang berbentuk kategori atau keterangan sedangkan Riset merupakan suatu proses kegiatan penyelidikan (investigasi) atau eksplorasi terhadap suatu masalah yang dilakukan menurut kaidah dan metodologi tertentu secara ilmiah dan sistematis.</string>
+    <string name="riset_2">\t\t\t\t\tData Riset merupakan sejumlah informasi berupa gambaran tentang sesuatu, keadaan atau masalah yang berbentuk angka maupun kategori atau keterangan dan diperoleh dari kegiatan investigasi atau ekplorasi yang dilakukan menurut kaidah dan metedologi tertentu secara ilmiah dan sistematis.</string>
+    <string name="riset_3">\t\t\t\t\tData riset banyak digunakan dalam berbagai bidang di zaman sekarang, baik di bidang industri, di bidang pendidikan dan berbagai bidang lainnya, contohnya seperti, selain sebagai syarat untuk menyelesaikan studi di pendidikan tinggi, riset atau penelitian juga digunakan di dalam bisnis, seperti penelitian pasar, penelitian pengembangan produk (R&amp;D), riset kepuasan pelanggan, riset pengalaman konsumen, dan lainnya. Hasil riset tersebut dapat digunakan untuk kepentingan bisnis dan sosial masyarakat, tentunya di karenakan karena pentingnya manfaat dari data riset tersebut,bisa berguna bagi banyak orang. Seperti misalnya riset mengenai pasar atau produk-produk yang berada didalam proses jual beli pembeli dan pelanggan.</string>
+
+    <string name="manfaat_data_riset">Manfaat Data Riset</string>
+    <string name="desc_manfaat">Berikut ini beberapa manfaat dari data riset atau data hasil riset pasar, antara lain:</string>
+    <string name="manfaat_1">Mendapatkan informasi yang akurat</string>
+    <string name="manfaat_1_desc">Data riset akan memberikan informasi yang nyata dan akurat karena membutuhkan proses dan mekanisme yang runtut dalam proses pengambilan atau pengumpulannya.</string>
+    <string name="manfaat_2">Membantu Membuat keputusan yang terinformasi dengan baik</string>
+    <string name="manfaat_2_desc">Proses penyelesaian masalah dari suatu penelitian akan terasa lebih mudah apabila kita memiliki data yang akurat dan terkonfirmasi dengan benar sesuai fakta lapangan. Berbagai macam metode penyelesaian akan membutuhkan data-data sebelum menentukan langkah proses penyelesaiannya.</string>
+    <string name="manfaat_3">Menentukan ukuran pasar</string>
+    <string name="manfaat_3_desc">Seorang peneliti dapat mengevaluasi ukuran pasar yang harus dicakup jika menjual produk atau jasa untuk mendapatkan keuntungan.</string>
+    <string name="manfaat_4">Mempelajari tentang preferensi pelanggan</string>
+    <string name="manfaat_4_desc">Ini membantu untuk mengetahui bagaimana preferensi dan selera klien berubah sehingga perusahaan dapat memenuhi preferensi, kebiasaan pembelian, dan tingkat pendapatan. Peneliti dapat menentukan jenis produk yang harus diproduksi atau dijual berdasarkan kebutuhan spesifik konsumen.</string>
+    <string name="manfaat_5">Mengumpulkan detail tentang persepsi pelanggan tentang merek</string>
+    <string name="manfaat_5_desc">Selain menghasilkan informasi, riset pasar membantu peneliti dalam memahami bagaimana pelanggan memandang organisasi atau merek.</string>
+    <string name="manfaat_6">Menganalisis metode komunikasi pelanggan</string>
+    <string name="manfaat_6_desc">Riset pasar sejatinya akan senantiasa berfungsi sebagai panduan untuk komunikasi dengan klien saat ini dan klien potensial.</string>
+    <string name="manfaat_7">Investasi bisnis yang produktif</string>
+    <string name="manfaat_7_desc">Maksud dari tujuan ini adalah investasi yang bagus untuk bisnis apa pun, karena berkat itu mereka mendapatkan informasi yang tak ternilai, ini menunjukkan kepada para peneliti cara untuk mengikuti jalan yang benar dan mencapai penjualan yang diperlukan.</string>
+
 </resources>
