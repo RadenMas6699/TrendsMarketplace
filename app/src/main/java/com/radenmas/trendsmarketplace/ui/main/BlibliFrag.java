@@ -1,10 +1,17 @@
 package com.radenmas.trendsmarketplace.ui.main;
 
+import android.annotation.SuppressLint;
+import android.os.Build;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ImageView;
 
 import com.radenmas.trendsmarketplace.R;
 import com.radenmas.trendsmarketplace.base.BaseFragment;
+import com.radenmas.trendsmarketplace.network.Config;
 
 public class BlibliFrag extends BaseFragment {
     @Override
@@ -12,15 +19,28 @@ public class BlibliFrag extends BaseFragment {
         return R.layout.frag_blibli;
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void myCodeHere(View view) {
-        WebView webViewBukalapak = view.findViewById(R.id.webViewBukalapak);
-//        webViewBukalapak.loadUrl("https://www.bukalapak.com/c/fashion-pria/kemeja?");
-//        webViewBukalapak.getSettings().setLoadsImagesAutomatically(true);
-//        webViewBukalapak.getSettings().setJavaScriptEnabled(true);
-//        webViewBukalapak.getSettings().setDomStorageEnabled(true);
+        ImageView imgBack = view.findViewById(R.id.imgBack);
+        imgBack.setOnClickListener(view1 -> getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new HomeFrag()).commit());
 
-//        webViewBukalapak.loadUrl(Config.URL_BUKALAPAK);
-//        webViewBukalapak.getSettings().setJavaScriptEnabled(true);
+        WebView webView = view.findViewById(R.id.webViewBlibli);
+
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setDatabaseEnabled(true);
+        settings.setUserAgentString("Mozilla/5.0 (Linux; Android 5.1.1; Nexus 5 Build/LMY48B; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.65 Mobile Safari/537.36");
+        settings.setDomStorageEnabled(true);
+        settings.setGeolocationEnabled(true);
+        settings.setLoadsImagesAutomatically(true);
+        settings.setAppCacheEnabled(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            settings.setSafeBrowsingEnabled(true);
+        }
+
+        webView.setWebViewClient(new WebViewClient());
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.loadUrl(Config.URL_BLIBLI);
     }
 }

@@ -51,8 +51,8 @@ public class HomeFrag extends Fragment {
         });
 
         b.rlBlibli.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Blibli", Toast.LENGTH_SHORT).show();
-//            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new HelpFrag()).commit();
+//            Toast.makeText(getContext(), "Blibli", Toast.LENGTH_SHORT).show();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.contentMain, new BlibliFrag()).commit();
         });
     }
 

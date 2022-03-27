@@ -5,7 +5,6 @@ import android.os.Handler;
 
 import com.radenmas.trendsmarketplace.R;
 import com.radenmas.trendsmarketplace.base.BaseActivity;
-import com.radenmas.trendsmarketplace.ui.TestAct;
 import com.radenmas.trendsmarketplace.ui.main.MainAct;
 
 public class SplashAct extends BaseActivity {
