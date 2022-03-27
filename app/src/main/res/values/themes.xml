@@ -22,14 +22,14 @@
     <style name="Panduan">
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:justificationMode">inter_word</item>
+        <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
     </style>
 
     <style name="RisetData">
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:justificationMode">inter_word</item>
+        <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
     </style>
 
     <style name="Manfaat">
@@ -37,7 +37,7 @@
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:textSize">14sp</item>
         <item name="android:layout_marginStart">20dp</item>
-        <item name="android:justificationMode">inter_word</item>
+        <item name="android:justificationMode" tools:targetApi="o">inter_word</item>
     </style>
 
     <style name="TitleToolbar">

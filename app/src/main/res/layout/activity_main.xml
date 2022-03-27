@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.HomeFrag">
+    tools:context=".ui.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -45,7 +45,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/imgHelp"
+                    android:id="@+id/imgGuide"
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:layout_marginEnd="8dp"

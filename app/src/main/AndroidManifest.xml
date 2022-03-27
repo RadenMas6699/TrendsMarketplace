@@ -12,9 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrendsMarketlace"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.main.MainAct" />
+        <activity android:name=".ui.BlibliActivity" />
+        <activity android:name=".ui.ShopeeActivity" />
+        <activity android:name=".ui.TokopediaActivity" />
+        <activity android:name=".ui.RisetDataActivity" />
+        <activity android:name=".ui.GuideActivity" />
+        <activity android:name=".ui.MainActivity" />
         <activity
-            android:name=".ui.splash.SplashAct"
+            android:name=".ui.SplashActivity"
             android:exported="true"
             android:theme="@style/Splash">
             <intent-filter>
@@ -23,7 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
+
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="false" />
     </application>
 
