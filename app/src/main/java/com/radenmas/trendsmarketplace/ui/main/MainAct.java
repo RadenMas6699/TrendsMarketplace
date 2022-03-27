@@ -10,12 +10,11 @@ import com.radenmas.trendsmarketplace.R;
 import com.radenmas.trendsmarketplace.databinding.ActMainBinding;
 
 public class MainAct extends AppCompatActivity {
-    private ActMainBinding b;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        b = ActMainBinding.inflate(getLayoutInflater());
+        ActMainBinding b = ActMainBinding.inflate(getLayoutInflater());
         View v = b.getRoot();
         setContentView(v);
 

@@ -24,12 +24,4 @@ public abstract class BaseFragment extends Fragment {
 
         return view;
     }
-
-    protected void toastS(String message) {
-        Toast.makeText(getContext(), "" + message, Toast.LENGTH_SHORT).show();
-    }
-
-    protected void toastL(String message) {
-        Toast.makeText(getContext(), "" + message, Toast.LENGTH_LONG).show();
-    }
 }
