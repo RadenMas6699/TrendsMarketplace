@@ -10,7 +10,6 @@ import android.webkit.WebViewClient;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.radenmas.trendsmarketplace.databinding.ActMainBinding;
 import com.radenmas.trendsmarketplace.databinding.ActivityShopeeBinding;
 import com.radenmas.trendsmarketplace.network.Config;
 
