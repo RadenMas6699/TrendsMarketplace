@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrendsMarketlace"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ui.AboutActivity" />
         <activity android:name=".ui.BlibliActivity" />
         <activity android:name=".ui.ShopeeActivity" />
         <activity android:name=".ui.TokopediaActivity" />

@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onClick() {
-        b.imgGuide.setOnClickListener(view -> {
-            startActivity(new Intent(this, GuideActivity.class));
+        b.imgAbout.setOnClickListener(view -> {
+            startActivity(new Intent(this, AboutActivity.class));
         });
         b.imgLogout.setOnClickListener(view -> {
             dialogLogout();
@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
         });
         b.rlBlibli.setOnClickListener(view -> {
             startActivity(new Intent(this, BlibliActivity.class));
+        });
+        b.rlGuide.setOnClickListener(view -> {
+            startActivity(new Intent(this, GuideActivity.class));
         });
     }
 
