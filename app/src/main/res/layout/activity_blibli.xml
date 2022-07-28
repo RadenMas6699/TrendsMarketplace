@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.BlibliActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -39,4 +40,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="-24dp" />
+
+    <EditText
+        android:id="@+id/etSearchBlibli"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_below="@id/appBar"
+        android:background="@color/white"
+        android:drawableStart="@drawable/ic_search_outline"
+        android:drawablePadding="8dp"
+        android:hint="@string/search"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        android:lines="1"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:textColor="@color/primary_text"
+        android:textSize="14sp" />
 </RelativeLayout>

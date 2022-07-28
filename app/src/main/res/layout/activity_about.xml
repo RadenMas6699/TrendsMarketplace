@@ -60,11 +60,11 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvAppVersion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="4dp"
-            android:text="Versi 1.1"
             android:textColor="@color/primary_text"
             android:textSize="16sp" />
 
