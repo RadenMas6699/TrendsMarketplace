@@ -3,24 +3,29 @@
     package="com.radenmas.trendsmarketplace">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TrendsMarketlace"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.AboutActivity" />
-        <activity android:name=".ui.BlibliActivity" />
-        <activity android:name=".ui.ShopeeActivity" />
-        <activity android:name=".ui.TokopediaActivity" />
-        <activity android:name=".ui.RisetDataActivity" />
-        <activity android:name=".ui.GuideActivity" />
-        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.blibli.BlibliActivity" />
+        <activity android:name=".ui.about.AboutActivity" />
+        <activity android:name=".ui.shopee.ShopeeActivity" />
+<!--        <activity android:name=".ui.TokopediaActivity" />-->
+        <activity android:name=".ui.riset.RisetDataActivity" />
+        <activity android:name=".ui.guide.GuideActivity" />
+        <activity android:name=".ui.main.MainActivity" />
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Splash">
             <intent-filter>
@@ -29,10 +34,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="android.webkit.WebView.EnableSafeBrowsing"
-            android:value="false" />
     </application>
 
 </manifest>

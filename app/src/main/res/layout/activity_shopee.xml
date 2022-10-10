@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ShopeeActivity">
+    android:orientation="vertical"
+    tools:context=".ui.shopee.ShopeeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -31,29 +32,40 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/imgBack"
                 android:text="@string/shopee" />
+
+            <ImageView
+                android:id="@+id/imgDownload"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:padding="3dp"
+                android:src="@drawable/ic_download" />
         </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <WebView
-        android:id="@+id/webViewShopee"
-        android:layout_marginTop="-24dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <EditText
-        android:id="@+id/etSearchShopee"
-        android:layout_below="@id/appBar"
+        android:id="@+id/etSearch"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_below="@id/appBar"
         android:background="@color/white"
         android:drawableStart="@drawable/ic_search_outline"
         android:drawablePadding="8dp"
         android:hint="@string/search"
         android:imeOptions="actionSearch"
-        android:inputType="text"
+        android:inputType="textCapWords"
         android:lines="1"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="12dp"
+        android:paddingVertical="8dp"
         android:textColor="@color/primary_text"
         android:textSize="14sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProduct"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/etSearch"
+        android:layout_marginTop="-1dp"
+        android:background="#F6f6f6"
+        tools:listitem="@layout/list_shopee_grid" />
 </RelativeLayout>

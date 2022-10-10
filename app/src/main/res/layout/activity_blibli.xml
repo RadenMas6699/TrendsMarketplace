@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.BlibliActivity">
+    tools:context=".ui.blibli.BlibliActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -32,17 +32,19 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/imgBack"
                 android:text="@string/blibli" />
+
+            <ImageView
+                android:id="@+id/imgDownload"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:padding="3dp"
+                android:src="@drawable/ic_download" />
         </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <WebView
-        android:id="@+id/webViewBlibli"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="-24dp" />
-
     <EditText
-        android:id="@+id/etSearchBlibli"
+        android:id="@+id/etSearch"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_below="@id/appBar"
@@ -51,10 +53,17 @@
         android:drawablePadding="8dp"
         android:hint="@string/search"
         android:imeOptions="actionSearch"
-        android:inputType="text"
+        android:inputType="textCapWords"
         android:lines="1"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="12dp"
+        android:paddingVertical="8dp"
         android:textColor="@color/primary_text"
         android:textSize="14sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProduct"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/etSearch"
+        tools:listitem="@layout/list_blibli" />
 </RelativeLayout>
