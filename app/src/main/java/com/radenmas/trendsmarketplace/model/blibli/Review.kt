@@ -1,6 +1,12 @@
 package com.radenmas.trendsmarketplace.model.blibli
 
+import com.google.gson.annotations.SerializedName
+
 data class Review(
-	val count: Int,
-	val absoluteRating: Double
+
+	@field:SerializedName("absoluteRating")
+	val absoluteRating: Double,
+
+	@field:SerializedName("count")
+	val count: Int
 )

@@ -14,6 +14,7 @@ import com.radenmas.trendsmarketplace.ui.blibli.BlibliActivity
 import com.radenmas.trendsmarketplace.ui.guide.GuideActivity
 import com.radenmas.trendsmarketplace.ui.riset.RisetDataActivity
 import com.radenmas.trendsmarketplace.ui.shopee.ShopeeActivity
+import com.radenmas.trendsmarketplace.ui.tokopedia.TokopediaActivity
 
 /**
  * Created by RadenMas on 28/03/2022.
@@ -44,9 +45,9 @@ class MainActivity : AppCompatActivity() {
         binding.rlRisetData.setOnClickListener {
             startActivity(Intent(this, RisetDataActivity::class.java))
         }
-//        binding.rlTokopedia.setOnClickListener {
-//            startActivity(Intent(this, TokopediaActivity::class.java))
-//        }
+        binding.rlTokopedia.setOnClickListener {
+            startActivity(Intent(this, TokopediaActivity::class.java))
+        }
         binding.rlShopee.setOnClickListener {
             startActivity(Intent(this, ShopeeActivity::class.java))
         }

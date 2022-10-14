@@ -8,7 +8,6 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import android.widget.TextView.OnEditorActionListener
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.radenmas.trendsmarketplace.adapter.AdapterShopee
@@ -54,12 +53,12 @@ class ShopeeActivity : AppCompatActivity() {
 
         b.etSearch.setOnEditorActionListener(object : OnEditorActionListener {
             override fun onEditorAction(p0: TextView?, p1: Int, p2: KeyEvent?): Boolean {
-                search = b.etSearch.text.toString()
+                search = b.etSearch.text.toString().trim()
                 if (search.isNotBlank() && p1 == EditorInfo.IME_ACTION_SEARCH) {
                     b.etSearch.clearFocus()
                     Utils.showLoading(this@ShopeeActivity)
 
-                    Retro.shopee.getSearchKeyword(
+                    Retro.shopee.searchProductShopee(
                         "sales",
                         search,
                         50,
@@ -101,10 +100,10 @@ class ShopeeActivity : AppCompatActivity() {
     private fun intiView() {
         Utils.showLoading(this@ShopeeActivity)
 
-        Retro.shopee.getSearchKeyword(
+        Retro.shopee.searchProductShopee(
             "sales",
             search,
-            50,
+            100,
             0,
             "desc",
             "search",
@@ -124,6 +123,7 @@ class ShopeeActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ResponseShopee>, t: Throwable) {
+                    Utils.dismissLoading()
                     Log.d("XXX", "ERROR : ${t.message}")
                 }
             })
@@ -194,8 +194,8 @@ class ShopeeActivity : AppCompatActivity() {
                 cell.setCellValue(items[i].itemBasic.name)
 
                 cell = row.createCell(1)
-                val price = items[i].itemBasic.price/100000
-                cell.setCellValue(price.toString())
+                val price = items[i].itemBasic.price / 100000
+                cell.setCellValue(Utils.formatRupiah(price.toInt()))
 
                 cell = row.createCell(2)
                 cell.setCellValue(items[i].itemBasic.shopLocation)

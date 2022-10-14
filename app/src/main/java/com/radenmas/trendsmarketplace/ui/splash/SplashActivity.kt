@@ -1,16 +1,13 @@
 package com.radenmas.trendsmarketplace.ui.splash
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.radenmas.trendsmarketplace.databinding.ActivitySplashBinding
-import com.radenmas.trendsmarketplace.ui.blibli.BlibliActivity
 import com.radenmas.trendsmarketplace.ui.main.MainActivity
-import com.radenmas.trendsmarketplace.ui.shopee.ShopeeActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -23,9 +20,10 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         Handler(Looper.myLooper()!!).postDelayed({
-            startActivity(Intent(applicationContext, MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
 //            startActivity(Intent(this, BlibliActivity::class.java))
 //            startActivity(Intent(this, ShopeeActivity::class.java))
+//            startActivity(Intent(this, TokopediaActivityKotlin::class.java))
             finish()
         }, 1000)
     }

@@ -14,14 +14,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.radenmas.trendsmarketplace.R
-import com.radenmas.trendsmarketplace.model.blibli.ProductsItem
-import com.radenmas.trendsmarketplace.utils.Utils
+import com.radenmas.trendsmarketplace.model.tokopedia.ProductsItem
 
-class AdapterBlibli(val context: Context) : RecyclerView.Adapter<AdapterBlibli.BlibliViewHolder>() {
+class AdapterTokopedia(val context: Context) :
+    RecyclerView.Adapter<AdapterTokopedia.TokopediaViewHolder>() {
 
     private val productItem: MutableList<ProductsItem> = mutableListOf()
 
-    inner class BlibliViewHolder(item: View) : RecyclerView.ViewHolder(item) {
+    inner class TokopediaViewHolder(item: View) : RecyclerView.ViewHolder(item) {
 
         private val image: ImageView = item.findViewById(R.id.imgProduct)
         private val title: TextView = item.findViewById(R.id.tvTitle)
@@ -31,18 +31,13 @@ class AdapterBlibli(val context: Context) : RecyclerView.Adapter<AdapterBlibli.B
         private val sold: TextView = item.findViewById(R.id.tvSold)
 
         fun bindUser(b: ProductsItem) {
-
-            Glide.with(context).load(b.images[0]).into(image)
+            Glide.with(context).load(b.imageUrl)
+                .into(image)
             title.text = b.name
-            price.text = Utils.formatRupiah(b.price.minPrice)
-            city.text = b.location
-            if (b.review.absoluteRating > 0) {
-                rating.visibility = View.VISIBLE
-                rating.text = "${b.review.absoluteRating} (${b.review.count}) | "
-            } else {
-                rating.visibility = View.GONE
-            }
-            sold.text = "Terjual ${b.soldRangeCount.id}"
+            price.text = b.price
+            city.text = b.shop.city
+            rating.text = "${b.ratingAverage}"
+//            sold.text =
         }
     }
 
@@ -52,13 +47,13 @@ class AdapterBlibli(val context: Context) : RecyclerView.Adapter<AdapterBlibli.B
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BlibliViewHolder {
-        return BlibliViewHolder(
-            LayoutInflater.from(context).inflate(R.layout.list_blibli, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TokopediaViewHolder {
+        return TokopediaViewHolder(
+            LayoutInflater.from(context).inflate(R.layout.list_tokopedia, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: BlibliViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: TokopediaViewHolder, position: Int) {
         holder.bindUser(productItem[position])
     }
 

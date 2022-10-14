@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.TextView.OnEditorActionListener
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.radenmas.trendsmarketplace.adapter.AdapterBlibli
 import com.radenmas.trendsmarketplace.databinding.ActivityBlibliBinding
 import com.radenmas.trendsmarketplace.model.blibli.ProductsItem
@@ -52,12 +53,12 @@ class BlibliActivity : AppCompatActivity() {
 
         b.etSearch.setOnEditorActionListener(object : OnEditorActionListener {
             override fun onEditorAction(p0: TextView?, p1: Int, p2: KeyEvent?): Boolean {
-                search = b.etSearch.text.toString()
+                search = b.etSearch.text.toString().trim()
                 if (search.isNotBlank() && p1 == EditorInfo.IME_ACTION_SEARCH) {
                     b.etSearch.clearFocus()
                     Utils.showLoading(this@BlibliActivity)
 
-                    Retro.blibli.getSearchKeyword(16, 1, search)
+                    Retro.blibli.searchProductBlibli(16, 1, search)
                         .enqueue(object : Callback<ResponseBlibli> {
                             override fun onResponse(
                                 call: Call<ResponseBlibli>,
@@ -92,13 +93,16 @@ class BlibliActivity : AppCompatActivity() {
     private fun intiView() {
         Utils.showLoading(this@BlibliActivity)
 
-        Retro.blibli.getSearchKeyword(16, 1, search)
+        Retro.blibli.searchProductBlibli(16, 1, search)
             .enqueue(object : Callback<ResponseBlibli> {
                 override fun onResponse(
                     call: Call<ResponseBlibli>,
                     response: retrofit2.Response<ResponseBlibli>
                 ) {
                     Utils.dismissLoading()
+
+                    Log.d("XXX", response.code().toString())
+
                     items = response.body()!!.data.products
                     for (c in items) {
                         adapter.setProduct(items)
@@ -106,11 +110,12 @@ class BlibliActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<ResponseBlibli>, t: Throwable) {
+                    Utils.dismissLoading()
                     Log.d("XXX", "ERROR: ${t.message}")
                 }
             })
 
-        b.rvProduct.layoutManager = LinearLayoutManager(this)
+        b.rvProduct.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
         adapter = AdapterBlibli(this)
         b.rvProduct.adapter = adapter
     }
@@ -169,10 +174,6 @@ class BlibliActivity : AppCompatActivity() {
             cell.setCellValue("Gambar")
             cell.cellStyle = headerStyle
 
-            cell = row.createCell(7)
-            cell.setCellValue("Deskripsi")
-            cell.cellStyle = headerStyle
-
             for (i in items.indices) {
                 row = sheet.createRow(i + 1)
 
@@ -180,7 +181,7 @@ class BlibliActivity : AppCompatActivity() {
                 cell.setCellValue(items[i].name)
 
                 cell = row.createCell(1)
-                cell.setCellValue(items[i].price.minPrice.toString())
+                cell.setCellValue(Utils.formatRupiah(items[i].price.minPrice))
 
                 cell = row.createCell(2)
                 cell.setCellValue(items[i].location)
@@ -196,9 +197,6 @@ class BlibliActivity : AppCompatActivity() {
 
                 cell = row.createCell(6)
                 cell.setCellValue(items[i].images[0])
-
-                cell = row.createCell(7)
-                cell.setCellValue(items[i].uniqueSellingPoint)
             }
             workbook.write(outputStream)
             outputStream.close()

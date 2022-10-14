@@ -15,7 +15,7 @@ interface APIShopee {
         "Content-Type: application/json"
     )
     @GET("api/v4/search/search_items")
-    fun getSearchKeyword(
+    fun searchProductShopee(
         @Query("by") by: String,
         @Query("keyword") keyword: String,
         @Query("limit") limit: Int,

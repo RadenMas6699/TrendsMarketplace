@@ -17,11 +17,11 @@ import com.radenmas.trendsmarketplace.R
 import com.radenmas.trendsmarketplace.model.shopee.ItemsItem
 import com.radenmas.trendsmarketplace.utils.Utils
 
-class AdapterShopee(val context: Context) : RecyclerView.Adapter<AdapterShopee.UserViewHolder>() {
+class AdapterShopee(val context: Context) : RecyclerView.Adapter<AdapterShopee.ShopeeViewHolder>() {
 
     private val productItem: MutableList<ItemsItem> = mutableListOf()
 
-    inner class UserViewHolder(item: View) : RecyclerView.ViewHolder(item) {
+    inner class ShopeeViewHolder(item: View) : RecyclerView.ViewHolder(item) {
 
         private val image: ImageView = item.findViewById(R.id.imgProduct)
         private val title: TextView = item.findViewById(R.id.tvTitle)
@@ -48,13 +48,13 @@ class AdapterShopee(val context: Context) : RecyclerView.Adapter<AdapterShopee.U
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        return UserViewHolder(
-            LayoutInflater.from(context).inflate(R.layout.list_shopee_grid, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShopeeViewHolder {
+        return ShopeeViewHolder(
+            LayoutInflater.from(context).inflate(R.layout.list_shopee, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ShopeeViewHolder, position: Int) {
         holder.bindUser(productItem[position])
     }
 
