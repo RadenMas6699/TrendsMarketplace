@@ -10,6 +10,7 @@
     <string name="help">Bantuan</string>
     <string name="guide">Panduan</string>
     <string name="help_guide">Petunjuk Penggunaan</string>
+    <string name="search">Cari produk trending</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
     <string name="text_dialog_logout">Apakah Anda yakin ingin keluar dari aplikasi ini?</string>
@@ -50,6 +51,5 @@
     <string name="manfaat_7_desc">Maksud dari tujuan ini adalah investasi yang bagus untuk bisnis apa pun, karena berkat itu mereka mendapatkan informasi yang tak ternilai, ini menunjukkan kepada para peneliti cara untuk mengikuti jalan yang benar dan mencapai penjualan yang diperlukan.</string>
     <string name="about">Tentang</string>
     <string name="by">by <b>Muhammad Resky Putra</b></string>
-    <string name="search">Cari produk trending</string>
 
 </resources>

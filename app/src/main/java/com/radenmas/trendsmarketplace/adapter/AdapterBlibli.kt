@@ -30,7 +30,7 @@ class AdapterBlibli(val context: Context) : RecyclerView.Adapter<AdapterBlibli.B
         private val rating: TextView = item.findViewById(R.id.tvRating)
         private val sold: TextView = item.findViewById(R.id.tvSold)
 
-        fun bindUser(b: ProductsItem) {
+        fun bindProduct(b: ProductsItem) {
 
             Glide.with(context).load(b.images[0]).into(image)
             title.text = b.name
@@ -59,7 +59,7 @@ class AdapterBlibli(val context: Context) : RecyclerView.Adapter<AdapterBlibli.B
     }
 
     override fun onBindViewHolder(holder: BlibliViewHolder, position: Int) {
-        holder.bindUser(productItem[position])
+        holder.bindProduct(productItem[position])
     }
 
     override fun getItemCount(): Int {

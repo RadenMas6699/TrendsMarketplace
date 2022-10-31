@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.radenmas.trendsmarketplace">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,47 +18,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrendsMarketlace"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".ui.tokopedia.TokopediaActivity"
-            android:exported="false">
 
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-
-        <activity android:name=".ui.blibli.BlibliActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity android:name=".ui.about.AboutActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity android:name=".ui.shopee.ShopeeActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity android:name=".ui.riset.RisetDataActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity android:name=".ui.guide.GuideActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity android:name=".ui.main.MainActivity">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+        <activity android:name=".ui.TokopediaActivity" />
+        <activity android:name=".ui.BlibliActivity" />
+        <activity android:name=".ui.AboutActivity" />
+        <activity android:name=".ui.ShopeeActivity" />
+        <activity android:name=".ui.RisetDataActivity" />
+        <activity android:name=".ui.GuideActivity" />
+        <activity android:name=".ui.MainActivity" />
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name=".ui.SplashActivity"
             android:exported="true"
             android:theme="@style/Splash">
             <intent-filter>
@@ -67,6 +35,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
     </application>
 

@@ -30,11 +30,11 @@ class AdapterShopee(val context: Context) : RecyclerView.Adapter<AdapterShopee.S
         private val rating: TextView = item.findViewById(R.id.tvRating)
         private val sold: TextView = item.findViewById(R.id.tvSold)
 
-        fun bindUser(b: ItemsItem) {
+        fun bindProduct(b: ItemsItem) {
             Glide.with(context).load("https://cf.shopee.co.id/file/${b.itemBasic.image}")
                 .into(image)
             title.text = b.itemBasic.name
-            val harga = b.itemBasic.price/100000
+            val harga = b.itemBasic.price / 100000
             price.text = Utils.formatRupiah(harga.toInt())
             city.text = b.itemBasic.shopLocation
             rating.text = "${Utils.formatComma1(b.itemBasic.itemRating.ratingStar.toFloat())} | "
@@ -55,7 +55,7 @@ class AdapterShopee(val context: Context) : RecyclerView.Adapter<AdapterShopee.S
     }
 
     override fun onBindViewHolder(holder: ShopeeViewHolder, position: Int) {
-        holder.bindUser(productItem[position])
+        holder.bindProduct(productItem[position])
     }
 
     override fun getItemCount(): Int {

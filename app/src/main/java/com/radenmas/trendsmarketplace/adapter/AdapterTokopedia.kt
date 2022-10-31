@@ -30,14 +30,13 @@ class AdapterTokopedia(val context: Context) :
         private val rating: TextView = item.findViewById(R.id.tvRating)
         private val sold: TextView = item.findViewById(R.id.tvSold)
 
-        fun bindUser(b: ProductsItem) {
+        fun bindProduct(b: ProductsItem) {
             Glide.with(context).load(b.imageUrl)
                 .into(image)
             title.text = b.name
             price.text = b.price
             city.text = b.shop.city
             rating.text = "${b.ratingAverage}"
-//            sold.text =
         }
     }
 
@@ -54,7 +53,7 @@ class AdapterTokopedia(val context: Context) :
     }
 
     override fun onBindViewHolder(holder: TokopediaViewHolder, position: Int) {
-        holder.bindUser(productItem[position])
+        holder.bindProduct(productItem[position])
     }
 
     override fun getItemCount(): Int {
