@@ -7,6 +7,12 @@
     android:background="@drawable/bg_gradient"
     tools:context=".ui.SplashActivity">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo_unm" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,10 +22,10 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:src="@drawable/ic_trend_marketplace_transparent"
-            android:contentDescription="@string/app_name" />
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_trend_marketplace_transparent" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,11 +37,20 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/imgUnm"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/img_unm_blu" />
+
     <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinKit"
         style="@style/SpinKitView.Large.ThreeBounce"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/imgUnm"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
         app:SpinKit_Color="@color/black" />
